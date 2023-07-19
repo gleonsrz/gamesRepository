@@ -6,6 +6,9 @@
 //
 
 import XCTest
+@testable import games
+import RealmSwift
+
 
 final class gamesUITests: XCTestCase {
 

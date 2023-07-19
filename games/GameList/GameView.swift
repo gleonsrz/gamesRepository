@@ -9,7 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct GameView: View {
-    private let juego: Game
+    internal let juego: Game
     @State private var isInfoButtonTapped: Bool = false
     
     init(juego: Game) {

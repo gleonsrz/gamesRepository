@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D2F99B52A68225200824163 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9D2F99B42A68225200824163 /* Realm */; };
+		9D2F99B72A68225200824163 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9D2F99B62A68225200824163 /* RealmSwift */; };
+		9D2F99B92A68225700824163 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9D2F99B82A68225700824163 /* Realm */; };
+		9D2F99BB2A68225700824163 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9D2F99BA2A68225700824163 /* RealmSwift */; };
+		9D2F99BC2A68238400824163 /* ImageCarrousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6A912A675CA600151C28 /* ImageCarrousel.swift */; };
+		9D2F99BD2A68238A00824163 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6A7F2A6677CD00151C28 /* DateUtil.swift */; };
+		9D2F99BE2A68238A00824163 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6A932A67B10600151C28 /* NetworkManager.swift */; };
+		9D2F99BF2A68238A00824163 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6A862A66873300151C28 /* GameDetailView.swift */; };
+		9D2F99C02A68238A00824163 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6A882A66874200151C28 /* GameDetailViewModel.swift */; };
+		9D2F99C12A68238A00824163 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6A8A2A66883000151C28 /* GameDetailModel.swift */; };
+		9D2F99C22A68239200824163 /* ImageCarrousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6A912A675CA600151C28 /* ImageCarrousel.swift */; };
+		9D2F99C32A68239200824163 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6A7F2A6677CD00151C28 /* DateUtil.swift */; };
+		9D2F99C42A68239200824163 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6A932A67B10600151C28 /* NetworkManager.swift */; };
+		9D2F99C52A68239200824163 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6A862A66873300151C28 /* GameDetailView.swift */; };
+		9D2F99C62A68239200824163 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6A882A66874200151C28 /* GameDetailViewModel.swift */; };
+		9D2F99C72A68239200824163 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6A8A2A66883000151C28 /* GameDetailModel.swift */; };
+		9D2F99D02A682DE400824163 /* gameDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2F99CF2A682DE400824163 /* gameDetailTests.swift */; };
 		9DA1CD1B2A663B7A001CDCC1 /* gamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA1CD1A2A663B7A001CDCC1 /* gamesApp.swift */; };
 		9DA1CD1D2A663B7A001CDCC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA1CD1C2A663B7A001CDCC1 /* ContentView.swift */; };
 		9DA1CD1F2A663B7C001CDCC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DA1CD1E2A663B7C001CDCC1 /* Assets.xcassets */; };
@@ -53,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D2F99CF2A682DE400824163 /* gameDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameDetailTests.swift; sourceTree = "<group>"; };
 		9DA1CD172A663B7A001CDCC1 /* games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = games.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA1CD1A2A663B7A001CDCC1 /* gamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gamesApp.swift; sourceTree = "<group>"; };
 		9DA1CD1C2A663B7A001CDCC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D2F99B72A68225200824163 /* RealmSwift in Frameworks */,
+				9D2F99B52A68225200824163 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,12 +116,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D2F99BB2A68225700824163 /* RealmSwift in Frameworks */,
+				9D2F99B92A68225700824163 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D2F99B32A68225200824163 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9D52C39D2A68111300250BA3 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +146,7 @@
 				9DA1CD2B2A663B7C001CDCC1 /* gamesTests */,
 				9DA1CD352A663B7C001CDCC1 /* gamesUITests */,
 				9DA1CD182A663B7A001CDCC1 /* Products */,
+				9D2F99B32A68225200824163 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				9DA1CD2C2A663B7C001CDCC1 /* gamesTests.swift */,
+				9D2F99CF2A682DE400824163 /* gameDetailTests.swift */,
 			);
 			path = gamesTests;
 			sourceTree = "<group>";
@@ -238,6 +269,10 @@
 				9DA1CD2A2A663B7C001CDCC1 /* PBXTargetDependency */,
 			);
 			name = gamesTests;
+			packageProductDependencies = (
+				9D2F99B42A68225200824163 /* Realm */,
+				9D2F99B62A68225200824163 /* RealmSwift */,
+			);
 			productName = gamesTests;
 			productReference = 9DA1CD282A663B7C001CDCC1 /* gamesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -256,6 +291,10 @@
 				9DA1CD342A663B7C001CDCC1 /* PBXTargetDependency */,
 			);
 			name = gamesUITests;
+			packageProductDependencies = (
+				9D2F99B82A68225700824163 /* Realm */,
+				9D2F99BA2A68225700824163 /* RealmSwift */,
+			);
 			productName = gamesUITests;
 			productReference = 9DA1CD322A663B7C001CDCC1 /* gamesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -355,6 +394,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D2F99D02A682DE400824163 /* gameDetailTests.swift in Sources */,
+				9D2F99BD2A68238A00824163 /* DateUtil.swift in Sources */,
+				9D2F99BE2A68238A00824163 /* NetworkManager.swift in Sources */,
+				9D2F99BF2A68238A00824163 /* GameDetailView.swift in Sources */,
+				9D2F99C02A68238A00824163 /* GameDetailViewModel.swift in Sources */,
+				9D2F99C12A68238A00824163 /* GameDetailModel.swift in Sources */,
+				9D2F99BC2A68238400824163 /* ImageCarrousel.swift in Sources */,
 				9DEB6A832A667D6000151C28 /* Model.swift in Sources */,
 				9DA1CD4F2A66446D001CDCC1 /* GameViewModel.swift in Sources */,
 				9DA1CD512A666B23001CDCC1 /* GameView.swift in Sources */,
@@ -367,6 +413,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D2F99C22A68239200824163 /* ImageCarrousel.swift in Sources */,
+				9D2F99C32A68239200824163 /* DateUtil.swift in Sources */,
+				9D2F99C42A68239200824163 /* NetworkManager.swift in Sources */,
+				9D2F99C52A68239200824163 /* GameDetailView.swift in Sources */,
+				9D2F99C62A68239200824163 /* GameDetailViewModel.swift in Sources */,
+				9D2F99C72A68239200824163 /* GameDetailModel.swift in Sources */,
 				9DA1CD502A66446D001CDCC1 /* GameViewModel.swift in Sources */,
 				9DEB6A822A667D5D00151C28 /* ContentView.swift in Sources */,
 				9DA1CD392A663B7C001CDCC1 /* gamesUITestsLaunchTests.swift in Sources */,
@@ -582,6 +634,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P25XQ256JU;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -604,6 +657,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P25XQ256JU;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -625,6 +679,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P25XQ256JU;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -646,6 +701,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P25XQ256JU;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -714,6 +770,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9D2F99B42A68225200824163 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DEB6A8C2A66D9D800151C28 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		9D2F99B62A68225200824163 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DEB6A8C2A66D9D800151C28 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		9D2F99B82A68225700824163 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DEB6A8C2A66D9D800151C28 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		9D2F99BA2A68225700824163 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DEB6A8C2A66D9D800151C28 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		9DEB6A8D2A66D9D800151C28 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9DEB6A8C2A66D9D800151C28 /* XCRemoteSwiftPackageReference "realm-swift" */;
