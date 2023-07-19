@@ -30,6 +30,8 @@ struct ContentView: View {
                             }
                             .headerProminence(.increased)
                             .listRowBackground(Color.clear)
+                        } else {
+                            Text("Todavía no tienes favoritos")
                         }
                         Section {
                             ForEach(viewModel.juegos) { juego in
@@ -53,6 +55,8 @@ struct ContentView: View {
                             }
                             .headerProminence(.increased)
                             .listRowBackground(Color.clear)
+                        } else {
+                            Text("Ups, parece que no estás conectado a internet y no tienes favoritos")
                         }
                     }
                 }
