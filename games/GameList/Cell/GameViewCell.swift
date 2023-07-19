@@ -9,35 +9,35 @@ import SwiftUI
 import RealmSwift
 
 struct GameViewCell: View {
-    internal let juego: Game
+    internal let game: Game
     @State private var isInfoButtonTapped: Bool = false
     
-    init(juego: Game) {
-        self.juego = juego
+    init(game: Game) {
+        self.game = game
     }
     
-    init(detalleJuego: GameDetail) {
-        let juego = Game()
-        juego.id = detalleJuego.id
-        juego.title = detalleJuego.title
-        juego.thumbnail = detalleJuego.thumbnail
-        juego.short_description = detalleJuego.short_description
-        juego.game_url = detalleJuego.game_url
-        juego.genre = detalleJuego.genre
-        juego.platform = detalleJuego.platform
-        juego.publisher = detalleJuego.publisher
-        juego.developer = detalleJuego.developer
-        juego.release_date = detalleJuego.release_date
-        juego.freetogame_profile_url = detalleJuego.freetogame_profile_url
-        juego.isFavourite = detalleJuego.isFavourite
+    init(gameDetail: GameDetail) {
+        let game = Game()
+        game.id = gameDetail.id
+        game.title = gameDetail.title
+        game.thumbnail = gameDetail.thumbnail
+        game.short_description = gameDetail.short_description
+        game.game_url = gameDetail.game_url
+        game.genre = gameDetail.genre
+        game.platform = gameDetail.platform
+        game.publisher = gameDetail.publisher
+        game.developer = gameDetail.developer
+        game.release_date = gameDetail.release_date
+        game.freetogame_profile_url = gameDetail.freetogame_profile_url
+        game.isFavourite = gameDetail.isFavourite
         
-        self.juego = juego
+        self.game = game
     }
     
     var body: some View {
         VStack {
             Spacer()
-            AsyncImage(url: URL(string: juego.thumbnail)) { image in
+            AsyncImage(url: URL(string: game.thumbnail)) { image in
                 image
                     .resizable()
                     .scaledToFit()
@@ -46,13 +46,13 @@ struct GameViewCell: View {
                     .frame(width: 350, height: 200)
             }
             
-            Text(juego.title)
+            Text(game.title)
                 .font(.system(size: 32))
                 .foregroundColor(Color.blue)
             
             Spacer()
             
-            Text(juego.short_description)
+            Text(game.short_description)
                 .font(.system(size: 24))
             
             Spacer()
@@ -63,7 +63,7 @@ struct GameViewCell: View {
                         Text("Género: ")
                             .font(.system(size: 16))
                             .foregroundColor(Color.blue)
-                        Text(juego.genre)
+                        Text(game.genre)
                             .font(.system(size: 16))
                         Spacer()
                     }
@@ -72,7 +72,7 @@ struct GameViewCell: View {
                         Text("Plataforma: ")
                             .font(.system(size: 16))
                             .foregroundColor(Color.blue)
-                        Text(juego.platform)
+                        Text(game.platform)
                             .font(.system(size: 16))
                         Spacer()
                     }
@@ -81,7 +81,7 @@ struct GameViewCell: View {
                         Text("Editor: ")
                             .font(.system(size: 16))
                             .foregroundColor(Color.blue)
-                        Text(juego.publisher)
+                        Text(game.publisher)
                             .font(.system(size: 16))
                         Spacer()
                     }
@@ -90,7 +90,7 @@ struct GameViewCell: View {
                         Text("Fecha de lanzamiento: ")
                             .font(.system(size: 16))
                             .foregroundColor(Color.blue)
-                        Text(DateUtil.formatDate(juego.release_date))
+                        Text(DateUtil.formatDate(game.release_date))
                             .font(.system(size: 16))
                         Spacer()
                     }
@@ -108,10 +108,10 @@ struct GameViewCell: View {
                 }
                 .buttonStyle(PlainButtonStyle())
                 .sheet(isPresented: $isInfoButtonTapped) {
-                    if let isFavourite =  juego.isFavourite {
-                        GameDetailView(id: juego.id, isFavourite: isFavourite)
+                    if let isFavourite =  game.isFavourite {
+                        GameDetailView(id: game.id, isFavourite: isFavourite)
                     } else {
-                        GameDetailView(id: juego.id, isFavourite: false)
+                        GameDetailView(id: game.id, isFavourite: false)
                     }
                 }
             }

@@ -74,52 +74,9 @@ struct GameDetailView: View {
                             .imageScale(.large)
                             .onTapGesture {
                                 if !self.isGameAlreadyInFavourites() {
-                                    self.presentedGame = self.presentedGame != nil ? self.presentedGame: viewModel.detalleJuego
-                                    let newFavourite = GameDetail()
-                                    newFavourite.id = self.presentedGame != nil ? self.presentedGame!.id :viewModel.detalleJuego.id
-                                    newFavourite.title = self.presentedGame != nil ? self.presentedGame!.title : viewModel.detalleJuego.title
-                                    newFavourite.thumbnail = self.presentedGame != nil ? self.presentedGame!.thumbnail : viewModel.detalleJuego.thumbnail
-                                    newFavourite.short_description = self.presentedGame != nil ? self.presentedGame!.short_description : viewModel.detalleJuego.short_description
-                                    newFavourite.game_url = self.presentedGame != nil ? self.presentedGame!.game_url : viewModel.detalleJuego.game_url
-                                    newFavourite.genre = self.presentedGame != nil ? self.presentedGame!.genre : viewModel.detalleJuego.genre
-                                    newFavourite.platform = self.presentedGame != nil ? self.presentedGame!.platform : viewModel.detalleJuego.platform
-                                    newFavourite.publisher = self.presentedGame != nil ? self.presentedGame!.publisher : viewModel.detalleJuego.publisher
-                                    newFavourite.developer = self.presentedGame != nil ? self.presentedGame!.developer : viewModel.detalleJuego.developer
-                                    newFavourite.release_date = self.presentedGame != nil ? self.presentedGame!.release_date : viewModel.detalleJuego.release_date
-                                    newFavourite.freetogame_profile_url = self.presentedGame != nil ? self.presentedGame!.freetogame_profile_url : viewModel.detalleJuego.freetogame_profile_url
-                                    newFavourite.gameDescriptionText = self.presentedGame != nil ? self.presentedGame!.gameDescriptionText : viewModel.detalleJuego.gameDescriptionText
-                                    //newFavourite.screenshots = self.presentedGame != nil ? self.presentedGame!.screenshots : viewModel.detalleJuego.screenshots
-                                    newFavourite.status = self.presentedGame != nil ? self.presentedGame!.status : viewModel.detalleJuego.status
-                                    //newFavourite.minimum_system_requirements = self.presentedGame != nil ? self.presentedGame!.minimum_system_requirements : viewModel.detalleJuego.minimum_system_requirements
-                                    newFavourite.minimum_system_requirements?.id = UUID()
-                                    newFavourite.isFavourite = true
-                                    $favourites.append(newFavourite)
-                                    self.isFavourite = true
-                                    viewModel.detalleJuego.isFavourite = true
+                                    addFavourite()
                                 } else {
-                                    self.presentedGame = self.presentedGame != nil ? self.presentedGame: viewModel.detalleJuego
-                                    if let index = favourites.firstIndex(where: { $0.id == self.id }) {
-                                        let game = favourites[index]
-                                        let thawedGame = game.thaw()
-                                        
-                                        if let realm = thawedGame?.realm {
-                                            try? realm.write {
-                                                /*for screenshot in thawedGame!.screenshots {
-                                                    realm.delete(screenshot)
-                                                }
-                                                
-                                                if let requirements = thawedGame!.minimum_system_requirements {
-                                                    realm.delete(requirements)
-                                                }*/
-                                                
-                                                realm.delete(thawedGame!)
-                                            }
-                                        }
-                                        
-                                    }
-                                    self.isFavourite = false
-                                    viewModel.detalleJuego.isFavourite = false
-                                    
+                                    deleteFavourite()
                                 }
                             }
                     }
@@ -224,6 +181,56 @@ struct GameDetailView: View {
             }
         }
         return finalArray
+    }
+    
+    func addFavourite() {
+        self.presentedGame = self.presentedGame != nil ? self.presentedGame: viewModel.detalleJuego
+        let newFavourite = GameDetail()
+        newFavourite.id = self.presentedGame != nil ? self.presentedGame!.id :viewModel.detalleJuego.id
+        newFavourite.title = self.presentedGame != nil ? self.presentedGame!.title : viewModel.detalleJuego.title
+        newFavourite.thumbnail = self.presentedGame != nil ? self.presentedGame!.thumbnail : viewModel.detalleJuego.thumbnail
+        newFavourite.short_description = self.presentedGame != nil ? self.presentedGame!.short_description : viewModel.detalleJuego.short_description
+        newFavourite.game_url = self.presentedGame != nil ? self.presentedGame!.game_url : viewModel.detalleJuego.game_url
+        newFavourite.genre = self.presentedGame != nil ? self.presentedGame!.genre : viewModel.detalleJuego.genre
+        newFavourite.platform = self.presentedGame != nil ? self.presentedGame!.platform : viewModel.detalleJuego.platform
+        newFavourite.publisher = self.presentedGame != nil ? self.presentedGame!.publisher : viewModel.detalleJuego.publisher
+        newFavourite.developer = self.presentedGame != nil ? self.presentedGame!.developer : viewModel.detalleJuego.developer
+        newFavourite.release_date = self.presentedGame != nil ? self.presentedGame!.release_date : viewModel.detalleJuego.release_date
+        newFavourite.freetogame_profile_url = self.presentedGame != nil ? self.presentedGame!.freetogame_profile_url : viewModel.detalleJuego.freetogame_profile_url
+        newFavourite.gameDescriptionText = self.presentedGame != nil ? self.presentedGame!.gameDescriptionText : viewModel.detalleJuego.gameDescriptionText
+        //newFavourite.screenshots = self.presentedGame != nil ? self.presentedGame!.screenshots : viewModel.detalleJuego.screenshots
+        newFavourite.status = self.presentedGame != nil ? self.presentedGame!.status : viewModel.detalleJuego.status
+        //newFavourite.minimum_system_requirements = self.presentedGame != nil ? self.presentedGame!.minimum_system_requirements : viewModel.detalleJuego.minimum_system_requirements
+        newFavourite.minimum_system_requirements?.id = UUID()
+        newFavourite.isFavourite = true
+        $favourites.append(newFavourite)
+        self.isFavourite = true
+        viewModel.detalleJuego.isFavourite = true
+    }
+    
+    func deleteFavourite() {
+        self.presentedGame = self.presentedGame != nil ? self.presentedGame: viewModel.detalleJuego
+        if let index = favourites.firstIndex(where: { $0.id == self.id }) {
+            let game = favourites[index]
+            let thawedGame = game.thaw()
+            
+            if let realm = thawedGame?.realm {
+                try? realm.write {
+                    /*for screenshot in thawedGame!.screenshots {
+                        realm.delete(screenshot)
+                    }
+                    
+                    if let requirements = thawedGame!.minimum_system_requirements {
+                        realm.delete(requirements)
+                    }*/
+                    
+                    realm.delete(thawedGame!)
+                }
+            }
+            
+        }
+        self.isFavourite = false
+        viewModel.detalleJuego.isFavourite = false
     }
 }
 

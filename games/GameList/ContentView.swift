@@ -21,7 +21,7 @@ struct GameView: View {
                         if favourites.count > 0 {
                             Section {
                                 ForEach(favourites) { favourite in
-                                    GameViewCell(detalleJuego: favourite)
+                                    GameViewCell(gameDetail: favourite)
                                         .listRowBackground(Color.clear)
                                 }.onDelete(perform: $favourites.remove)
                                 
@@ -34,8 +34,8 @@ struct GameView: View {
                             Text("Todavía no tienes favoritos")
                         }
                         Section {
-                            ForEach(viewModel.juegos) { juego in
-                                GameViewCell(juego: juego)
+                            ForEach(viewModel.games) { game in
+                                GameViewCell(game: game)
                                     .listRowBackground(Color.clear)
                             }
                         } header: {
@@ -46,7 +46,7 @@ struct GameView: View {
                         if favourites.count > 0 {
                             Section { 
                                 ForEach(favourites) { favourite in
-                                    GameViewCell(detalleJuego: favourite)
+                                    GameViewCell(gameDetail: favourite)
                                         .listRowBackground(Color.clear)
                                 }.onDelete(perform: $favourites.remove)
                                 

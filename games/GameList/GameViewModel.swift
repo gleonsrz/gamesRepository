@@ -12,7 +12,7 @@ import RealmSwift
 class GameViewModel: ObservableObject {
     private let url = "https://www.freetogame.com/api/games"
     private var task: AnyCancellable?
-    @Published var juegos: [Game] = []
+    @Published var games: [Game] = []
     
     func obtenerJuegos() {
         task = URLSession.shared.dataTaskPublisher(for: URL(string: url)!)
@@ -35,6 +35,6 @@ class GameViewModel: ObservableObject {
             .replaceError(with: [])
             .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
-            .assign(to: \GameViewModel.juegos, on: self)
+            .assign(to: \GameViewModel.games, on: self)
     }
 }
