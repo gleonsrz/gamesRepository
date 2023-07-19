@@ -8,7 +8,7 @@
 import SwiftUI
 import RealmSwift
 
-struct ContentView: View {
+struct GameView: View {
     @ObservedObject private var networkManager = NetworkManager.shared
     @ObservedObject var viewModel = GameViewModel()
     @ObservedResults(GameDetail.self) var favourites
@@ -21,7 +21,7 @@ struct ContentView: View {
                         if favourites.count > 0 {
                             Section {
                                 ForEach(favourites) { favourite in
-                                    GameView(detalleJuego: favourite)
+                                    GameViewCell(detalleJuego: favourite)
                                         .listRowBackground(Color.clear)
                                 }.onDelete(perform: $favourites.remove)
                                 
@@ -35,7 +35,7 @@ struct ContentView: View {
                         }
                         Section {
                             ForEach(viewModel.juegos) { juego in
-                                GameView(juego: juego)
+                                GameViewCell(juego: juego)
                                     .listRowBackground(Color.clear)
                             }
                         } header: {
@@ -46,7 +46,7 @@ struct ContentView: View {
                         if favourites.count > 0 {
                             Section { 
                                 ForEach(favourites) { favourite in
-                                    GameView(detalleJuego: favourite)
+                                    GameViewCell(detalleJuego: favourite)
                                         .listRowBackground(Color.clear)
                                 }.onDelete(perform: $favourites.remove)
                                 
@@ -76,6 +76,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GameView()
     }
 }

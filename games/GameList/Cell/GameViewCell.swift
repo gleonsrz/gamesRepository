@@ -1,5 +1,5 @@
 //
-//  GameView.swift
+//  GameViewCell.swift
 //  games
 //
 //  Created by Christian Leon on 17/07/23.
@@ -8,7 +8,7 @@
 import SwiftUI
 import RealmSwift
 
-struct GameView: View {
+struct GameViewCell: View {
     internal let juego: Game
     @State private var isInfoButtonTapped: Bool = false
     
